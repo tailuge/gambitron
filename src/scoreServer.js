@@ -1,9 +1,9 @@
 //
 // Serve static pages and web services via express
-// Gambit
 //
-// e.g.
-// https://gambit-c9-tailuge.c9.io/graph.html
+// Gambitron
+//
+// https://gambitron-c9-tailuge.c9.io/gambitron.html
 //
 
 var StockfishProxy = require('./stockfishproxy.js');
