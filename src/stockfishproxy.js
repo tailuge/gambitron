@@ -8,6 +8,7 @@ module.exports = function StockfishProxy() {
 
     this.handleStdout = function(data) {
         var s = data.toString();
+        console.log(s);
         var arrayOfLines = s.match(/[^\r\n]+/g);
         for (var i in arrayOfLines) {
             var line = arrayOfLines[i];
@@ -20,7 +21,9 @@ module.exports = function StockfishProxy() {
     };
 
     this.handleExit = function(code) {
-        //console.log(self.result);
+        console.log("========v=======");
+        console.log(JSON.stringify(self.result));
+        console.log("========^=======");
         self.callback(self.result);
         return;
     };
@@ -35,10 +38,20 @@ module.exports = function StockfishProxy() {
         this.terminal.on('exit', this.handleExit);
 
         // trigger analysis        
-        this.terminal.stdin.write('setoption name MultiPV value ' + variations + '\n');
-        this.terminal.stdin.write('position fen ' + fen + '\n');
+        var commands = [
+            'setoption name MultiPV value ' + variations,
+            'position fen ' + fen ,
+            'go depth ' + depth,
+            "quit\n"
+        ].join("\n");
+        console.log(commands);
+        this.terminal.stdin.write(commands);
+/*
+        this.terminal.stdin.write('setoption name MultiPV value ' + variations + '\n\n');
+        this.terminal.stdin.write('position fen ' + fen + '\n\n');
         this.terminal.stdin.write('go depth ' + depth + '\n\n');
-        this.terminal.stdin.write('quit\n');
+        this.terminal.stdin.write('quit\n\n');
+        */
         return;
     };
 };

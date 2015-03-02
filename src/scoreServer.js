@@ -19,7 +19,12 @@ app.use(function(req, res, next) {
   next();
 })
 
-app.use(express.static("/home/ubuntu/workspace"));
+app.use(express.static("./html"));
+
+// when not on cloud9 run on 8080
+if (typeof process.env.PORT === 'undefined') {
+ process.env.PORT = 8080;
+}
 
 // Create the http server and get it to                                                                                                                
 // listen on the specified port process.env.PORT                                                                                                                   

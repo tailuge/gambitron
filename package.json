@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/tailuge/gambitron",
   "dependencies": {
+    "express": "^4.12.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

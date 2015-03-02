@@ -60,7 +60,7 @@ var onSnapEnd = function() {
 };
 
 var getEval = function(move, fen) {
-    var url = 'https://gambit-c9-tailuge.c9.io/score/' + (move.colour) + '/' + encodeURIComponent(fen) + "?unique=" + (new Date().getTime());
+    var url = '/score/' + (move.colour) + '/' + encodeURIComponent(fen) + "?unique=" + (new Date().getTime());
 
     console.log("url : " + url);
 
