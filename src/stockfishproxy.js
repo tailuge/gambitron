@@ -46,12 +46,6 @@ module.exports = function StockfishProxy() {
         ].join("\n");
         console.log(commands);
         this.terminal.stdin.write(commands);
-/*
-        this.terminal.stdin.write('setoption name MultiPV value ' + variations + '\n\n');
-        this.terminal.stdin.write('position fen ' + fen + '\n\n');
-        this.terminal.stdin.write('go depth ' + depth + '\n\n');
-        this.terminal.stdin.write('quit\n\n');
-        */
         return;
     };
 };
