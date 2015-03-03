@@ -8,8 +8,9 @@ module.exports = function(grunt) {
                 command: [
                     'rm -rf Stockfish',
                     'git clone https://github.com/official-stockfish/Stockfish.git',
+                    'cd Stockfish',
                     'git checkout tags/sf_5',
-                    'cd Stockfish/src',
+                    'cd src',
                     'ls -lart',
                     'echo "Building stockfish"',
                     'if [ `uname -i` = x86_64 ] ; then make build ARCH=x86-64 ; else echo "not x86_64" ; make build ARCH=general-32 ; fi'

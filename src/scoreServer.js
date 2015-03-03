@@ -77,7 +77,7 @@ app.get('/score/:colour/:fen', function(req, res, next) {
       pv: bestPV
     };
 
-    console.log("response:" + response);
+    console.log("response:" + JSON.stringify(response, null, 2));
     res.send(JSON.stringify(response, null, 2));
   });
 });

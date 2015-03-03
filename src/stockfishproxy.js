@@ -41,7 +41,7 @@ module.exports = function StockfishProxy() {
         var commands = [
             'setoption name MultiPV value ' + variations,
             'position fen ' + fen ,
-            'go depth ' + depth,
+            'go depth ' + depth + '\n',
             "quit\n"
         ].join("\n");
         console.log(commands);
